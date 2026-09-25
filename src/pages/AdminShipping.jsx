@@ -13,7 +13,7 @@ function AdminShipping({ onBack }) {
     setError('')
 
     try {
-      const response = await fetch('http://localhost:5000/api/shipping')
+      const response = await fetch('/api/shipping')
       const data = await response.json()
 
       if (!response.ok) {
@@ -50,7 +50,7 @@ function AdminShipping({ onBack }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/shipping/${rate.wilaya_code}`,
+        `/api/shipping/${rate.wilaya_code}`,
         {
           method: 'PATCH',
           headers: {

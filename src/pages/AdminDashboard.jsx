@@ -21,7 +21,7 @@ function AdminDashboard({ onLogout, onAddProduct, onEditProduct, onShipping, onO
     setError('')
 
     try {
-      const response = await fetch('http://localhost:5000/api/admin/products', {
+      const response = await fetch('/api/admin/products', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -55,7 +55,7 @@ function AdminDashboard({ onLogout, onAddProduct, onEditProduct, onShipping, onO
     if (!token) return
 
     try {
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch('/api/orders', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -30,7 +30,7 @@ function AdminOrders({ onBack }) {
     try {
       const token = localStorage.getItem('untha_admin_token')
 
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch('/api/orders', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -67,7 +67,7 @@ function AdminOrders({ onBack }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/orders/${orderId}/status`,
+        `/api/orders/${orderId}/status`,
         {
           method: 'PATCH',
           headers: {

@@ -14,7 +14,7 @@ function AdminLogin({ onLogin }) {
     setLoading(true)
 
     try {
-      const response = await fetch('https://boutique-untha-db.abdomerah58.workers.dev/api/admin/login', {
+      const response = await fetch('/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

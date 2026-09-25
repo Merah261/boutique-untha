@@ -24,7 +24,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch('/api/products')
       .then((response) => response.json())
       .then((data) => {
         console.log('API PRODUCTS:', data)

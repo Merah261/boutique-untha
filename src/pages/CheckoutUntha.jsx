@@ -29,7 +29,7 @@ function CheckoutUntha({ onBack }) {
       }
     }
 
-    fetch('http://localhost:5000/api/shipping')
+    fetch('/api/shipping')
       .then((response) => response.json())
       .then((data) => setShippingRates(Array.isArray(data) ? data : []))
       .catch(() => setShippingRates([]))
@@ -57,7 +57,7 @@ function CheckoutUntha({ onBack }) {
 
     if (!product) return
 
-    const response = await fetch('http://localhost:5000/api/orders', {
+    const response = await fetch('/api/orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

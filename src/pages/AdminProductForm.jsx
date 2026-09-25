@@ -102,7 +102,7 @@ function AdminProductForm({ onBack, onSaved, product = null }) {
         })
 
         const uploadResponse = await fetch(
-          'http://localhost:5000/api/admin/upload-images',
+          '/api/admin/upload-images',
           {
             method: 'POST',
             headers: {
@@ -127,14 +127,14 @@ function AdminProductForm({ onBack, onSaved, product = null }) {
         }
 
         uploadedImages = (uploadData.images || []).map(
-          (image) => `http://localhost:5000${image.url}`
+          (image) => `${image.url}`
         )
       }
 
       const response = await fetch(
         product
-          ? `http://localhost:5000/api/products/${product.id}`
-          : 'http://localhost:5000/api/products',
+          ? `/api/products/${product.id}`
+          : '/api/products',
         {
           method: product ? 'PATCH' : 'POST',
           headers: {
